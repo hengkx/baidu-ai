@@ -187,7 +187,6 @@ class Ocr {
       if (isNaN(res.totalTax)) {
         res.totalTax = 0;
       }
-      console.log(res);
       return res;
     }
     return body;
