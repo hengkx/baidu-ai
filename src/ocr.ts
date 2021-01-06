@@ -4,7 +4,7 @@ import _ from 'lodash';
 /**
  * image/url/pdf_file 三选一
  */
-interface VatInvoiceParams {
+export interface VatInvoiceParams {
   /**
    * 图像数据，base64编码后进行urlencode，要求base64编码和urlencode后大小不超过4M，最短边至少15px，最长边最大4096px,支持jpg/jpeg/png/bmp格式
    */
@@ -27,7 +27,7 @@ interface VatInvoiceParams {
   type?: 'normal' | 'roll';
 }
 
-interface Invoice {
+export interface VatInvoice {
   /**
    * 发票类型
    */
@@ -119,7 +119,7 @@ interface Invoice {
   remark: string;
 }
 
-interface Error {
+export interface BaiduError {
   logId: number;
   errorMsg: string;
   errorCode: number;
@@ -156,7 +156,7 @@ class Ocr {
     return this.accessToken;
   }
 
-  async vatInvoice(data: VatInvoiceParams): Promise<Invoice | Error> {
+  async vatInvoice(data: VatInvoiceParams): Promise<VatInvoice | BaiduError> {
     const token = await this.getAccessToken();
     if (data.pdf_file && data.pdf_file.startsWith('http')) {
       const { body } = await got.get(data.pdf_file, { responseType: 'buffer' });
