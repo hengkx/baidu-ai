@@ -27,7 +27,7 @@ export interface VatInvoiceParams {
   type?: 'normal' | 'roll';
 }
 
-export interface VatInvoice {
+export interface VatInvoice extends BaiduError {
   /**
    * 发票类型
    */
