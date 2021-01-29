@@ -187,7 +187,7 @@ class Ocr {
       if (isNaN(res.totalTax)) {
         res.totalTax = 0;
       }
-      return res;
+      return { errorCode: 0, ...res };
     }
     return body;
   }
