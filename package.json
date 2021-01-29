@@ -7,7 +7,8 @@
     "build": "tsc",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
-    "pre-checkin": "npm run format && npm run build"
+    "pre-checkin": "npm run format && npm run build",
+    "prepublish": "yarn build"
   },
   "repository": {
     "type": "git",
