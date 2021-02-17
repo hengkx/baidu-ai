@@ -1,6 +1,6 @@
 {
   "name": "@hengkx/baidu-ai",
-  "version": "0.1.8",
+  "version": "0.2.2",
   "main": "lib/index.js",
   "scripts": {
     "dev": "tsc -w",

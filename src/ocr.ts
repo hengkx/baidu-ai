@@ -1,5 +1,6 @@
 import got from 'got';
 import _ from 'lodash';
+import { BaiduError } from './interface';
 
 /**
  * image/url/pdf_file 三选一
@@ -117,12 +118,6 @@ export interface VatInvoice extends BaiduError {
    * 备注
    */
   remark: string;
-}
-
-export interface BaiduError {
-  logId: number;
-  errorMsg: string;
-  errorCode: number;
 }
 
 class Ocr {
